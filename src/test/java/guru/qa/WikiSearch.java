@@ -25,7 +25,17 @@ public class WikiSearch {
         $(byText("Show 3 more pages…")).click();
         $("#wiki-pages-box").shouldHave(text("SoftAssertions"));
         $(byText("SoftAssertions")).click();
-        $(".markdown-body").$(".highlight", 4).shouldHave(text("ExtendWith"));
+        $(".markdown-body").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})\n" +
+                "class Tests {\n" +
+                "  @Test\n" +
+                "  void test() {\n" +
+                "    Configuration.assertionMode = SOFT;\n" +
+                "    open(\"page.html\");\n" +
+                "\n" +
+                "    $(\"#first\").should(visible).click();\n" +
+                "    $(\"#second\").should(visible).click();\n" +
+                "  }\n" +
+                "}"));
 
 
     }
