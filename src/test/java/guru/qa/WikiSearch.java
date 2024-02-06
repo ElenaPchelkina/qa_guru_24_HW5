@@ -25,7 +25,7 @@ public class WikiSearch {
         $(byText("Show 3 more pages…")).click();
         $("#wiki-pages-box").shouldHave(text("SoftAssertions"));
         $(byText("SoftAssertions")).click();
-        $(".markdown-body").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})\n" +
+        $("#wiki-body").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})\n" +
                 "class Tests {\n" +
                 "  @Test\n" +
                 "  void test() {\n" +
